@@ -22,17 +22,16 @@
 
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
-	@shadow: 0 0 .7vw magenta;
+	@flickering-shadow: 0 0 .7vw magenta;
   // color: white;
   // background-color: hsl(180, 24%, 12%);
-  text-shadow: @shadow;
-	/* comments are white on green */
+  text-shadow: @flickering-shadow;
+
   .syntax--definition.syntax--comment,
   .syntax--comment.syntax--line,
   .syntax--comment.syntax--block {
 		color: rgba(255,255,255,.3);
-		text-shadow: @shadow;
-    //box-shadow:       0px 0px 5px 2px #575;
+		text-shadow: @flickering-shadow;
 	}
 }
 
