@@ -8,28 +8,25 @@
  * If you are unfamiliar with Less, you can read more about it here:
  * http://lesscss.org
  */
-
-
 /*
  * Examples
  * (To see them, uncomment and save)
  */
-
 // style the background color of the tree view
 .tree-view {
-    //background-color: black;
+	//background-color: black;
 }
-
 // style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
-	@flickering-shadow: 0 0 .7vw magenta;
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
-  text-shadow: @flickering-shadow;
 
-  .syntax--definition.syntax--comment,
-  .syntax--comment.syntax--line,
-  .syntax--comment.syntax--block {
+atom-text-editor {
+	@flickering-shadow: 0 0 0.7vw magenta, 1px 2px 0.05vw rgba(0, 139, 139, .5);
+	// color: white;
+	// background-color: hsl(180, 24%, 12%);
+	text-shadow: @flickering-shadow;
+	// comments
+	.syntax--comment.syntax--block,
+	.syntax--comment.syntax--line,
+	.syntax--definition.syntax--comment {
 		color: rgba(255,255,255,.3);
 		text-shadow: @flickering-shadow;
 	}
@@ -37,14 +34,18 @@ atom-text-editor {
 
 // style UI elements inside atom-text-editor
 atom-text-editor .cursor {
-  border-color: lightseagreen;
-  border-radius: 2px;
-  border-width: 10px;
-  transition: all .12s ease;
+	border-color: lightseagreen;
+	border-radius: 2px;
+	border-width: 10px;
+	transition: all 0.12s ease;
 	transform: flap;
 }
-
 @keyframes flap {
-	from { transform: skewX(0);}
-	to { transform: skewX(360deg);}
+	from {
+		transform: skewX(0);
+	}
+
+	to {
+		transform: skewX(360deg);
+	}
 }
