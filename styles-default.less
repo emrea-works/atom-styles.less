@@ -22,17 +22,21 @@
 
 // style UI elements inside atom-text-editor
 atom-text-editor {
-  font-smooth: always; /* This may not work in all browsers */
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; /* For smoother text */
-  -moz-osx-font-smoothing: grayscale;
+  .font-hard();
   .syntax--string.syntax--quoted,
   .syntax--string.syntax--regexp {
     -webkit-font-feature-settings: "liga" off, "calt" off;
   }
+  font-kerning: none;
+  font-feature-settings:
+    "liga" 1,
+    "frac" 0, // 0
+    "tnum" 1,
+    "hist" 1,
+    "zero" 1; // "smcp",
   font-family: @default-font !important;
-  font-weight: 700;
 	line-height: @medium-line-height;
+  font-weight: 700;
 
   /** Activate Atlas Dev Synthetical Night */
   // .ad-synthetical-night();
@@ -42,7 +46,7 @@ atom-text-editor {
 	//
 	.atom-overlay {
     code {
-      font-family: "monospace";
+      font-family: "monospace" !important;
     }
   }
 
@@ -61,16 +65,36 @@ atom-text-editor {
 
 // @default-font: 'BigBlueTermPlus Nerd Font';
 // @default-font: 'Sligoil';
-@default-font: 'Anka/Coder Narrow';
+// @default-font: 'Anka/Coder Narrow';
 // @default-font: 'Departure Mono';
-// @default-font: 'Sligoil';
 // @default-font: 'Ubuntu Mono';
-// @default-font: 'DejaVu Sans Mono';
-// @default-font: "Atari800";
+@default-font: 'DejaVu Sans Mono';
+// @default-font: '"Atari800"';
 // @default-font: 'Office Code Pro D';
 // @default-font: 'Input Mono Compressed';
-// @default-font: freemono, Menlo, Consolas, monospace
+// @default-font: Menlo;
+// @default-font: 'D2Coding ligature';
+// @default-font: 'Envy Code B 10pt';
+// @default-font: 'Iosevka Term SS12';
+// @default-font: 'LigaSauceCodePro Nerd Font';
+// @default-font: 'Luculent';
+// @default-font: monospace;
+// @default-font: freemono;
 
+
+.font-smooth() {
+  font-smooth: always; /* This may not work in all browsers */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; /* For smoother text */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-hard() {
+  font-smooth: never; /* This may not work in all browsers */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: none; //subpixel-antialiased; /* For smoother text */
+  -moz-osx-font-smoothing: none; //auto;
+}
 
 
 .vibrant-light-modifications {
