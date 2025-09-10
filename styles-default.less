@@ -1,0 +1,124 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+// style the background color of the tree view
+.tree-view {
+  // background-color: black;
+}
+// style the background and foreground colors on the atom-text-editor-element itself
+
+
+
+// style UI elements inside atom-text-editor
+atom-text-editor {
+  font-smooth: always; /* This may not work in all browsers */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; /* For smoother text */
+  -moz-osx-font-smoothing: grayscale;
+  .syntax--string.syntax--quoted,
+  .syntax--string.syntax--regexp {
+    -webkit-font-feature-settings: "liga" off, "calt" off;
+  }
+  font-family: @default-font !important;
+  font-weight: 700;
+	line-height: @medium-line-height;
+
+  /** Activate Atlas Dev Synthetical Night */
+  // .ad-synthetical-night();
+
+  // .vibrant-light-modifications();
+	// .soft-background();
+	//
+	.atom-overlay {
+    code {
+      font-family: "monospace";
+    }
+  }
+
+}
+
+.soft-background {
+  background-color: #efc;
+}
+
+@skyscrapper-line-height: 2.10em;
+@tall-line-height       : 1.75em;
+@medium-line-height     : 1.50em;
+@quarter-line-height    : 1.40em;
+@short-line-height      : 1.28em;
+@tiny-line-height       : 1.10em;
+
+// @default-font: 'BigBlueTermPlus Nerd Font';
+// @default-font: 'Sligoil';
+@default-font: 'Anka/Coder Narrow';
+// @default-font: 'Departure Mono';
+// @default-font: 'Sligoil';
+// @default-font: 'Ubuntu Mono';
+// @default-font: 'DejaVu Sans Mono';
+// @default-font: "Atari800";
+// @default-font: 'Office Code Pro D';
+// @default-font: 'Input Mono Compressed';
+// @default-font: freemono, Menlo, Consolas, monospace
+
+
+
+.vibrant-light-modifications {
+  .invisible-character {
+    color: white;
+    opacity: .15;
+  }
+  .syntax--comment {
+    color: darkgray;
+    text-decoration: underline;
+    font-style: italic;
+    //background-color: @syntax-background-color-transparent;
+  }
+}
+
+/* Atlas Dev Synthetical Night */
+.ad-synthetical-night {
+  @flickering-shadow-soft: 0 0 0.7vw magenta, 0px 0px 0.08vw rgba(0, 139, 139, 0.8);
+  @flickering-shadow-hard: 0 0 0.7vw magenta, 1px 2px 0.28vw rgba(0, 139, 139, 0.5);
+	@color-cold: cyan; //lightseagreen;
+	@blur-radius: 0.053em;
+  text-shadow: @flickering-shadow-hard;
+  // comments
+  .syntax--comment.syntax--block,
+  .syntax--comment.syntax--line,
+  .syntax--definition.syntax--comment {
+    color: rgba(255, 255, 255, 0.3);
+		text-shadow: @flickering-shadow-soft;
+  }
+
+  .cursor {
+    border-color: @color-cold;
+    border-radius: 2px;
+    border-width: 10px;
+    // max-height: 4px;
+		// top: @line-height;
+    transition: all 0.12s ease;
+    // transform: flap;
+		box-shadow: 0 0 @blur-radius @color-cold;
+		filter: blur(@blur-radius);
+  }
+  @keyframes flap {
+    from {
+      transform: skewX(0);
+    }
+
+    to {
+      transform: skewX(360deg);
+    }
+  }
+}
