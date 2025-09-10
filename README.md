@@ -1,2 +1,3 @@
-# atom-styles.less
-A 80's Criminal Console Developer Style Theme for Atom Editor
+# default-styles.less for Pulsar (Formerly Atom) editor
+
+Backup of personal styles.less file as default, dirty, personal, yet could be interesting.
